@@ -1,0 +1,108 @@
+generated: '2026-08-25'
+method: probed
+source: >-
+  Direct unauthenticated HTTPS probes of every host LIQUiDITY Group controls — the
+  marketing/corporate host (www.liquidity.com), the customer platform host
+  (app.liquiditygroup.com, which serves the DYNAMiCs application), and the sibling fund
+  brand host (www.marsgrowth.com). Probed 2026-08-25.
+note: >-
+  NO .well-known document is served on any LIQUiDITY Group host. www.liquidity.com is a
+  Webflow site that answers every /.well-known/* path with a hard 404 and the literal body
+  "Invalid .well-known request". app.liquiditygroup.com is a single-page application whose
+  catch-all route answers 200 with the same HTML shell for EVERY path, including paths that
+  cannot exist; those 200s are SPA shells, not documents, and are recorded here as misses.
+  Because nothing real was returned, NO `type: WellKnown` and NO `type: SecurityTxt` pointer
+  is emitted in apis.yml — this file records a verified absence, not a presence.
+hosts:
+- host: www.liquidity.com
+  role: corporate website
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /llms.txt
+    status: 404
+    file: null
+  - path: /robots.txt
+    status: 200
+    file: null
+    note: >-
+      Served, but a robots.txt is not a .well-known API document. Contains only a Sitemap:
+      directive pointing at https://www.liquidity.com/sitemap.xml (200, 1,721 URLs, all
+      marketing/insights/learning pages — no developer, API or reference path among them).
+- host: app.liquiditygroup.com
+  role: DYNAMiCs customer platform (single-page application, login required)
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: SPA catch-all HTML shell, not a document — counted as a miss.
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: SPA catch-all HTML shell, not a document — counted as a miss.
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: SPA catch-all HTML shell, not a document — counted as a miss.
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: SPA catch-all HTML shell, not a document — counted as a miss.
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    note: SPA catch-all HTML shell, not a document — counted as a miss.
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: >-
+      SPA catch-all HTML shell, not an AgentCard — body is <!doctype html>, not a JSON
+      object. Counted as a miss; no a2a/ artifact written.
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    note: SPA catch-all HTML shell, not an AgentCard — counted as a miss.
+  - path: /llms.txt
+    status: 200
+    file: null
+    note: SPA catch-all HTML shell, not an llms.txt — counted as a miss.
+  - path: /robots.txt
+    status: 200
+    file: null
+    note: >-
+      A REAL robots.txt (text/plain, not the shell). Disallows /cabinet/, /analyst/,
+      /investors/ and /distributors/ — confirming the four private role areas of the
+      DYNAMiCs platform. Honored; those paths were not probed.
+- host: www.marsgrowth.com
+  role: Mars Growth Capital (LIQUiDITY Group / MUFG joint-venture fund brand)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /llms.txt
+    status: 404
+    file: null
+summary:
+  hosts_probed: 3
+  documents_served: 0
+  well_known_pointer_emitted: false
+  security_txt_pointer_emitted: false

@@ -1,0 +1,80 @@
+# LIQUiDITY Group
+
+> LIQUiDITY Group (branded "Liquidity") is an AI-native private credit lender and alternative
+> asset manager founded in 2018, headquartered in New York with offices in Tel Aviv, London,
+> Singapore, Tokyo and Abu Dhabi. It deploys non-dilutive debt and growth capital — roughly
+> $10M to $200M per facility — to late-stage technology and mid-market companies in 35+
+> countries, underwritten by its proprietary DYNAMiCs decision-science platform. It manages
+> several billion dollars across multiple debt and equity funds, including Mars Growth Capital,
+> a joint venture with MUFG Bank, and is backed by MUFG, Apollo Asset Management, Spark Capital
+> and Meitav Dash.
+
+## Status: no public API
+
+LIQUiDITY Group publishes no developer program, no API reference, no OpenAPI or AsyncAPI
+document, no GraphQL SDL, no SDK, no MCP server and no agent card. Verified 2026-08-25 by
+direct probe of every host the company controls. If you are an agent looking for a callable
+LIQUiDITY Group API, there is not one — do not synthesize endpoints from this file.
+
+What was probed and what it returned:
+
+- https://www.liquidity.com/openapi.json — 404
+- https://www.liquidity.com/swagger.json — 404
+- https://www.liquidity.com/api-docs — 404
+- https://www.liquidity.com/llms.txt — 404
+- https://www.liquidity.com/.well-known/security.txt — 404 ("Invalid .well-known request")
+- https://www.liquidity.com/.well-known/agent-card.json — 404
+- https://www.liquidity.com/.well-known/api-catalog — 404
+- https://www.liquidity.com/sitemap.xml — 200, 1,721 URLs, none of them a developer,
+  API, reference or pricing page
+- https://github.com/liquidity-capital — 200, the company's own GitHub organization
+  (linked to liquiditygroup.com), zero public repositories
+- npm / PyPI — no first-party LIQUiDITY Group client library published under any name
+
+## The DYNAMiCs platform (private, credentials required)
+
+The company's product runs at https://app.liquiditygroup.com — a single-page application
+titled "Liquidity Capital - Rev-share Growth Financing", entered at
+https://app.liquiditygroup.com/v2/signin. Its own publicly served JavaScript bundle names two
+HTTP surfaces, https://app.liquiditygroup.com/graphql and https://app.liquiditygroup.com/api/v3/,
+and its robots.txt disallows /cabinet/, /analyst/, /investors/ and /distributors/ — the four
+private role areas of the platform. Both surfaces are authentication-gated: unauthenticated
+GraphQL returns HTTP 400 {"errors":[{"message":"Something went wrong"}]} and the REST namespace
+returns HTTP 404 with a JSON error envelope. No schema could be introspected without
+credentials, and no schema is published anywhere. Nothing about those surfaces is documented
+here beyond their existence, and none of it is a public integration surface.
+
+Note that the SPA answers HTTP 200 with the same HTML shell for every path, including
+/.well-known/agent-card.json, /openapi.json and /llms.txt. Those 200s are catch-all shells,
+not documents. Do not treat them as evidence of a published artifact.
+
+## Company
+
+- Website: https://www.liquidity.com/
+- Who we are: https://www.liquidity.com/who-we-are
+- Private credit: https://www.liquidity.com/what-we-do/private-credit
+- Capital formation: https://www.liquidity.com/what-we-do/capital-formation
+- Portfolio: https://www.liquidity.com/portfolio
+- News and insights: https://www.liquidity.com/news-insights
+- Careers: https://www.liquidity.com/careers
+- Contact: https://www.liquidity.com/contact
+- Platform login: https://app.liquiditygroup.com/v2/signin
+- GitHub organization: https://github.com/liquidity-capital
+- LinkedIn: https://www.linkedin.com/company/liquidity-group/
+
+## Related brands and domains
+
+- Mars Growth Capital (LIQUiDITY Group / MUFG joint venture): https://www.marsgrowth.com
+- liquidity.group, liquiditygroup.com and www.liquidity-capital.com all resolve or redirect
+  to the same corporate surface
+
+## Legal
+
+- Terms and conditions: https://www.liquidity.com/legal/terms-and-conditions
+- Privacy policy: https://www.liquidity.com/legal/privacy-policy
+- CCPA notice: https://www.liquidity.com/legal/ccpa-notice
+
+## About this file
+
+Generated 2026-08-25 by API Evangelist from probed evidence and this repository's artifacts.
+It is not published by LIQUiDITY Group. Method: generated. Source: https://www.liquidity.com/

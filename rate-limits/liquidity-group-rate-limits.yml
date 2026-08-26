@@ -1,0 +1,23 @@
+generated: '2026-08-25'
+method: searched
+source: https://www.liquidity.com/
+limit_count: 0
+note: >-
+  No published rate limits, because no public API and no developer documentation exist. LIQUiDITY
+  Group operates two non-public HTTP surfaces behind the DYNAMiCs platform login at
+  app.liquiditygroup.com — a GraphQL endpoint at /graphql and a REST namespace at /api/v3/ — both
+  discovered from the platform's own publicly served JavaScript bundle. Neither is documented,
+  neither returns rate-limit headers to an unauthenticated caller (the GraphQL endpoint answers
+  HTTP 400 with {"errors":[{"message":"Something went wrong"}]} and the REST namespace answers
+  HTTP 404 with a JSON error envelope), and no runtime signal could be observed without
+  credentials, which this pipeline does not use. Recorded as an honest zero.
+  NO `type: RateLimits` pointer is emitted in apis.yml: this file records a verified absence.
+limits: []
+observed_headers: []
+evidence:
+- url: https://app.liquiditygroup.com/graphql
+  status: 400
+- url: https://app.liquiditygroup.com/api/v3/
+  status: 404
+- url: https://www.liquidity.com/sitemap.xml
+  status: 200

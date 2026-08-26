@@ -1,0 +1,24 @@
+generated: '2026-08-25'
+method: searched
+source: https://www.liquidity.com/
+docs: https://www.liquidity.com/what-we-do/private-credit
+plan_count: 0
+note: >-
+  LIQUiDITY Group publishes NO API plans or developer pricing of any kind, because it sells no
+  API product. It is a private credit lender: the thing it prices is a debt facility, negotiated
+  per borrower, and the only figure it publishes is a deal size range (approximately $10M to
+  $200M per facility) with terms set by underwriting rather than by a rate card. The full
+  1,721-URL sitemap at https://www.liquidity.com/sitemap.xml (HTTP 200) carries no /pricing,
+  /plans, /developers or /api page. Access to the DYNAMiCs platform at app.liquiditygroup.com is
+  granted to borrowers, analysts, fund investors and distributors as part of a financing or fund
+  relationship and is not sold as a self-serve tier.
+  NO `type: Plans` pointer is emitted in apis.yml: this file records a verified absence, and a
+  pointer would assert the provider publishes plans it does not publish.
+plans: []
+evidence:
+- url: https://www.liquidity.com/what-we-do/private-credit
+  status: 200
+- url: https://www.liquidity.com/sitemap.xml
+  status: 200
+- url: https://www.liquidity.com/contact
+  status: 200

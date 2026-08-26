@@ -1,17 +1,35 @@
 aid: liquidity-group
 name: LIQUiDITY Group
-description: 'LIQUiDITY Group is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  LIQUiDITY Group (branded simply "Liquidity") is an AI-native private credit lender and
+  alternative asset manager founded in 2018, headquartered in New York with offices in Tel Aviv,
+  London, Singapore, Tokyo and Abu Dhabi. It underwrites and deploys non-dilutive debt and growth
+  capital — typically $10M to $200M — to late-stage technology and mid-market companies across
+  35+ countries, using its proprietary DYNAMiCs decision-science platform to compress due diligence
+  from months to days. The firm manages several billion dollars across multiple debt and equity
+  funds, including Mars Growth Capital, a joint venture with MUFG Bank, and is backed by MUFG,
+  Apollo Asset Management, Spark Capital and Meitav Dash. Liquidity is a lender that runs on
+  software rather than a software vendor: its DYNAMiCs platform is operated for its own analysts,
+  borrowers and fund investors at app.liquiditygroup.com and is not offered as a public developer
+  product. No public developer portal, API reference, OpenAPI/GraphQL schema, SDK or machine-readable
+  contract is published on any host the company controls.
 url: https://raw.githubusercontent.com/api-evangelist/liquidity-group/refs/heads/main/apis.yml
+image: https://cdn.prod.website-files.com/692473d30dce37720b06615a/6a1ead70262b4f5eccc6226e_logo.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-25'
 modified: '2026-08-25'
 tags:
 - Company
+- Financial Services
+- Private Credit
+- Lending
+- Asset Management
+- Venture Debt
+- Fintech
+- Artificial Intelligence
+- Growth Capital
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +37,58 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/liquidity-group-domain-security.yml
 - type: Website
-  url: https://www.hiive.com/securities/liquidity-group-stock
+  url: https://www.liquidity.com/
+- type: About
+  url: https://www.liquidity.com/who-we-are
+- type: Portfolio
+  url: https://www.liquidity.com/portfolio
+- type: Blog
+  url: https://www.liquidity.com/news-insights
+- type: Support
+  url: https://www.liquidity.com/contact
+- type: Login
+  url: https://app.liquiditygroup.com/v2/signin
+- type: TermsOfService
+  url: https://www.liquidity.com/legal/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://www.liquidity.com/legal/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/liquidity-capital
+- type: LinkedIn
+  url: https://www.linkedin.com/company/liquidity-group/
+- type: Careers
+  url: https://www.liquidity.com/careers
+- type: LLMsTxt
+  url: llms/liquidity-group-llms.txt
+x-enrichment:
+  date: '2026-08-25'
+  status: minimal
+  artifacts_added: 5
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    LIQUiDITY Group is a private credit lender whose software, the DYNAMiCs decision-science
+    platform, is shipped only as an end-user product to its own analysts, borrowers, fund
+    investors and distributors at app.liquiditygroup.com — the SPA's own bundle names a private
+    /graphql and /api/v3/ backend, but there is no developer program, no API reference, no
+    published spec and no public repository anywhere on liquidity.com, liquiditygroup.com,
+    marsgrowth.com or the company's own GitHub org.
+  evidence:
+  - url: https://www.liquidity.com/openapi.json
+    status: 404
+  - url: https://www.liquidity.com/.well-known/security.txt
+    status: 404
+  - url: https://www.liquidity.com/llms.txt
+    status: 404
+  - url: https://www.liquidity.com/sitemap.xml
+    status: 200
+  - url: https://app.liquiditygroup.com/graphql
+    status: 400
+  - url: https://github.com/liquidity-capital
+    status: 200
+  checked: '2026-08-25'
