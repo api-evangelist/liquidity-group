@@ -14,6 +14,17 @@ description: >-
   product. No public developer portal, API reference, OpenAPI/GraphQL schema, SDK or machine-readable
   contract is published on any host the company controls.
 url: https://raw.githubusercontent.com/api-evangelist/liquidity-group/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/692473d30dce37720b06615a/6a1ead70262b4f5eccc6226e_logo.png
 x-type: company
 x-source: harvest:secondary-market
