@@ -1,0 +1,29 @@
+# Front Door AI Index — liquidity-group — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: liquidity-group
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.liquidity.com
+  final_host: www.liquidity.com
+  ownership: own
+  owner: liquidity-group
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 33
+  host_score: 33
+  density: 12.36
+  words: 2669
+  tiers:
+    agentic: 0
+    core: 33
+    model: 0
+  ambiguous: 3
+  top_terms:
+    AI: 31
+    intelligence: 2
+    artificial intelligence: 1
+    cognitive: 1
+    generative ai: 1
