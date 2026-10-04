@@ -46,7 +46,7 @@ created: '2026-08-25'
 modified: '2026-08-25'
 tags:
 - Company
-- Financial-Services
+- Financial Services
 - Private Credit
 - Lending
 - Asset Management
@@ -64,6 +64,7 @@ tags_raw:
 - Fintech
 - Artificial Intelligence
 - Growth Capital
+- Financial-Services
 apis: []
 maintainers:
 - FN: Kin Lane
